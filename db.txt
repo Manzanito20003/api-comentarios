@@ -1,0 +1,17 @@
+DROP DATABASE IF EXISTS bd_api_comentarios;
+CREATE DATABASE bd_api_comentarios CHARSET utf8mb4;
+USE bd_api_comentarios;
+
+CREATE TABLE comentarios(
+    id_comentario INT(11) NOT NULL AUTO_INCREMENT,
+    id_user  INT(11) NOT NULL,
+    id_publicacion INT(11) NOT NULL,
+    text VARCHAR(100) NOT NULL,
+    estado INT(1) NOT NULL,
+    PRIMARY KEY (id_comentario)
+);
+
+INSERT INTO comentarios(id_user, id_publicacion,text,estado) VALUES(1,1,"lINDO TU GATITO :)",1);
+INSERT INTO comentarios(id_user, id_publicacion,text,estado) VALUES(1,2,"MI GATO TAMBIEN TIENE",1);
+INSERT INTO comentarios(id_user, id_publicacion,text,estado) VALUES(2,1,"TAMBIEN HACE SU TRAVESURAS",1);
+commit;
